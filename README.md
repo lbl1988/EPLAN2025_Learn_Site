@@ -8,7 +8,7 @@
 [![No Backend](https://img.shields.io/badge/backend-none-success.svg)](https://github.com/lbl1988/EPLAN2025_Learn_Site)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-🌍 在线预览（部署后）：`https://lbl1988.github.io/EPLAN2025_Learn_Site/`　·　📦 仓库：[github.com/lbl1988/EPLAN2025_Learn_Site](https://github.com/lbl1988/EPLAN2025_Learn_Site)
+🌍 在线预览：[eplan-2025-learn-site.vercel.app](https://eplan-2025-learn-site.vercel.app/)　·　📦 仓库：[github.com/lbl1988/EPLAN2025_Learn_Site](https://github.com/lbl1988/EPLAN2025_Learn_Site)
 
 </div>
 
