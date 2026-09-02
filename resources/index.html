@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>资源下载 · EPLAN 2025 学习站</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html"><span class="dot"></span>EPLAN 2025 学习站</a>
+    <nav class="nav-links">
+      <a href="../courses/beginner.html">入门篇</a>
+      <a href="../courses/intermediate.html">进阶篇</a>
+      <a href="../courses/advanced.html">精通篇</a>
+      <a href="../engineering/index.html">工程化</a>
+      <a href="../videos/index.html">视频中心</a>
+      <a href="index.html">资源下载</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#7dd3fc">资源下载</span>
+    <h1>项目模板 / 示例工程 / 部件库 / 官方文档</h1>
+    <p>本页汇总 EPLAN 2025 学习所需的可下载资源与官方文档入口。绿色「配套」标记的示例工程配合<a href="../videos/index.html">视频中心</a>边看边练。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#templates">📦 项目模板</a>
+      <a class="btn btn-ghost" href="#docs">📄 官方文档</a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section class="section" id="templates">
+    <div class="wrap">
+      <span class="eyebrow">项目模板</span>
+      <h2>按标准选择项目模板</h2>
+      <p class="lead">模板选定后中后期更改极麻烦，创建项目时务必谨慎选择。</p>
+      <div class="grid g2">
+        <div class="link-card"><span class="ico">🇨🇳</span><div><h4>GB_tpl001 · 中国国标</h4><p>国内项目首选，符合 GB 系列电气制图标准。</p></div></div>
+        <div class="link-card"><span class="ico">🌍</span><div><h4>IEC_tpl · 国际标准</h4><p>出口设备或国际项目，国际电工委员会标准。</p></div></div>
+        <div class="link-card"><span class="ico">🇺🇸</span><div><h4>NFPA_tpl · 北美标准</h4><p>面向北美市场，NFPA 系列标准。</p></div></div>
+        <div class="link-card"><span class="ico">🇷🇺</span><div><h4>GOST_tpl · 俄语区</h4><p>俄罗斯认证标准，面向俄语区市场。</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects" style="background:#eef4fb">
+    <div class="wrap">
+      <span class="eyebrow">示例工程</span>
+      <h2>可下载的配套示例</h2>
+      <p class="lead">配合课程页与视频中心同步练习。示例工程可直接导入 EPLAN 2025 打开。</p>
+      <div class="grid g2">
+
+        <div class="card" id="motor">
+          <span class="tag">配套</span>
+          <h3>电机启停 · 标准控制电路</h3>
+          <p>点动 + 自锁 + 过载故障指示，主电路 / 控制电路 / 信号电路三区绘制，含完整端子排与 BOM 报表。</p>
+          <p style="margin-top:12px;font-size:14px"><strong>包含：</strong>项目文件 (.elk) · 端子排 · BOM 报表 · PDF 导出</p>
+          <p style="margin-top:14px">
+            <a class="btn btn-brand" href="../videos/index.html#v2-6">🎬 配套视频</a>
+            <a class="btn btn-ghost" href="../courses/beginner.html#topics" style="margin-left:8px">📚 入门篇主题 8</a>
+          </p>
+          <p style="margin-top:10px;font-size:13px;color:var(--muted)">提示：本示例可参照 B 站第 6 课，照着视频自己重画一遍，效果最佳。</p>
+        </div>
+
+        <div class="card" id="ct">
+          <span class="tag">配套 · 2025 新功能</span>
+          <h3>2025 · CT 机械式穿线</h3>
+          <p>电流互感器穿芯走线：原理图中以"机械式穿线"连接定义点显式呈现，连接清单与布线列表同步反映穿线依赖。</p>
+          <p style="margin-top:12px;font-size:14px"><strong>包含：</strong>含 CT 穿线的原理图页 · 连接清单报表 · 部件库</p>
+          <p style="margin-top:14px">
+            <a class="btn btn-brand" href="../videos/index.html#v1">🎬 官方视频 19:36</a>
+            <a class="btn btn-ghost" href="../courses/advanced.html#topics" style="margin-left:8px">📚 精通篇主题 7</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="parts-lib">
+    <div class="wrap">
+      <span class="eyebrow">部件库</span>
+      <h2>厂商部件库与宏</h2>
+      <p class="lead">常用厂商部件库与宏，可直接拷贝到 EPLAN 部件目录后插入使用。</p>
+      <div class="grid g3">
+        <a class="link-card" href="https://www.eplan-data-portal.com/" target="_blank"><span class="ico">🌐</span><div><h4>EPLAN Data Portal</h4><p>官方在线部件检索门户，含主流厂商数百万部件。</p></div></a>
+        <a class="link-card" href="https://new.siemens.com/" target="_blank"><span class="ico">⚡</span><div><h4>西门子部件库</h4><p>3TF / 3RT 接触器、3RV 断路器、3RA 回路保护器。</p></div></a>
+        <a class="link-card" href="https://www.se.com/sg/en/" target="_blank"><span class="ico">🔌</span><div><h4>施耐德部件库</h4><p>LC1 / LR2 接触器热继、NSX 断路器、XB 端子。</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="docs" style="background:#0b1220;color:#e2e8f0">
+    <div class="wrap">
+      <span class="eyebrow" style="color:#7dd3fc">官方文档</span>
+      <h2 style="color:#fff">官方文档与帮助入口</h2>
+      <p class="lead" style="color:#94a3b8">最权威的资料永远是官方文档。下面是 2025 版相关入口。</p>
+      <div class="grid g2">
+        <a class="link-card" style="background:#111a2e;border-color:#1f2937" href="https://eplan.help/en-us/infoportal/content/Plattform/2025/Content/htm/eplan_help.htm" target="_blank"><span class="ico">📚</span><div><h4 style="color:#fff">EPLAN InfoPortal 2025</h4><p style="color:#94a3b8">2025 平台官方帮助文档与 Release Notes。</p></div></a>
+        <a class="link-card" style="background:#111a2e;border-color:#1f2937" href="https://blog.eplanjapan.co.jp/hubfs/%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BC2024/Documents_pdf/20240708_Eplan_V2025_%E6%96%B0%E6%A9%9F%E8%83%BD_v1.0.pdf" target="_blank"><span class="ico">📑</span><div><h4 style="color:#fff">V2025 新功能 PDF（日文）</h4><p style="color:#94a3b8">EPLAN Japan 官方新功能白皮书 PDF。</p></div></a>
+        <a class="link-card" style="background:#111a2e;border-color:#1f2937" href="https://www.eplan.com/de-de/blog/software/whats-new-eplan-plattform-2025-software-einfach-anwenden" target="_blank"><span class="ico">📝</span><div><h4 style="color:#fff">What's New 2025 · 简易应用（德文）</h4><p style="color:#94a3b8">EPLAN Germany 官方博客三篇系列之一。</p></div></a>
+        <a class="link-card" style="background:#111a2e;border-color:#1f2937" href="https://blog.eplan.co.uk/whats-new-in-platform-2025-reducing-workload-for-skilled-workers" target="_blank"><span class="ico">🇬🇧</span><div><h4 style="color:#fff">What's New 2025 · 减轻负担（英文）</h4><p style="color:#94a3b8">EPLAN UK 官方博客 2025 新功能解读。</p></div></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dev-report">
+    <div class="wrap">
+      <span class="eyebrow">本项目</span>
+      <h2>本学习站的开发报告</h2>
+      <p class="lead">想知道本站为何这样组织？开发报告完整说明了参考站分析、视频筛选标准、架构设计与技术方案。</p>
+      <a class="btn btn-brand" href="../DEV_REPORT.md" target="_blank">📄 打开开发报告 DEV_REPORT.md</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="../index.html" style="color:#fff"><span class="dot"></span>EPLAN 2025 学习站</a>
+      <p style="margin-top:8px;max-width:520px">示例工程与部件库版权归原作者所有，仅供学习。商用请购买正版许可与官方部件库。</p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px;font-weight:700;color:#cbd5e1">资源导航</p>
+      <p style="margin:0"><a href="#templates">模板</a> · <a href="#projects">示例工程</a> · <a href="#parts-lib">部件库</a> · <a href="#docs">官方文档</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
