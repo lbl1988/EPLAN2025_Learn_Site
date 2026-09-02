@@ -298,6 +298,42 @@
     </div>
   </section>
 
+  <!-- V8 沐江电气 2025新版培训 -->
+  <section class="section" id="v8" style="background:#eef4fb">
+    <div class="wrap">
+      <span class="eyebrow">V8 · 2025 新版培训</span>
+      <h2>沐江电气 · 新版 Eplan2025 培训 14 讲</h2>
+      <p class="lead">B 站 UP 主"沐江电气"出品，2025 年 11 月最新发布，专讲 EPLAN 2025 新版 Ribbon 界面、导航器、命令搜索、符号/设备/宏插入、收藏标记——真正贴合 2025 新版的中文培训。点击右侧切换不同主题。</p>
+      <div class="grid g2" style="grid-template-columns:2fr 1fr;align-items:start">
+        <div class="video-card">
+          <div class="video-frame">
+            <iframe id="v8-player"
+              src="//player.bilibili.com/player.html?bvid=BV1bLCpBXE5c&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
+              title="沐江电气 新版Eplan2025培训"
+              allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
+              allowfullscreen
+              scrolling="no"></iframe>
+          </div>
+          <div class="body">
+            <div class="meta">
+              <span class="badge bili">B站</span>
+              <span class="badge" style="background:#dc2626;color:#fff">2025新版</span>
+              <span>来源：沐江电气</span>
+              <span id="v8-now-title">第 1 讲 · Ribbon 界面、选项卡与命令组介绍</span>
+            </div>
+            <p id="v8-now-desc">2025 新版 Ribbon 界面的选项卡与命令组结构介绍，认识新版操作入口。</p>
+            <p style="margin-top:12px;font-size:13px;color:var(--muted)">完整 14 讲合集：<a href="https://space.bilibili.com/1690260404/channel/collectiondetail?sid=6752207" target="_blank">沐江电气·新版 Eplan2025 培训教程（B站）</a></p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>📜 2025 新版培训播放列表</h3>
+          <div class="playlist" id="v8-playlist"></div>
+          <p style="margin-top:14px"><a class="btn btn-brand" href="https://space.bilibili.com/1690260404/channel/collectiondetail?sid=6752207" target="_blank">B站看完整 14 讲 →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 2025新功能 中文图文 -->
   <section class="section" id="v7">
     <div class="wrap">
@@ -351,6 +387,7 @@
             <tr style="border-top:1px solid #1f2937"><td style="padding:12px">V5</td><td style="padding:12px">EPLAN官方中文频道</td><td style="padding:12px">Pro Panel 3D 布局布线</td><td style="padding:12px">3讲</td><td style="padding:12px">★★★★★</td><td style="padding:12px"><a href="#v5" style="color:#7dd3fc">B站 iframe</a></td></tr>
             <tr style="border-top:1px solid #1f2937"><td style="padding:12px">V6</td><td style="padding:12px">电工杨小飞 + 张海如</td><td style="padding:12px">EPLAN 绘图实战合集</td><td style="padding:12px">19+66讲</td><td style="padding:12px">★★★★</td><td style="padding:12px"><a href="#v6" style="color:#7dd3fc">B站 iframe + 引导</a></td></tr>
             <tr style="border-top:1px solid #1f2937"><td style="padding:12px">V7</td><td style="padding:12px">亿道/锌锦/官方</td><td style="padding:12px">2025 新功能中文图文</td><td style="padding:12px">图文</td><td style="padding:12px">★★★★</td><td style="padding:12px"><a href="#v7" style="color:#7dd3fc">引导卡片</a></td></tr>
+            <tr style="border-top:1px solid #1f2937"><td style="padding:12px">V8</td><td style="padding:12px">沐江电气</td><td style="padding:12px">新版 Eplan2025 培训 14 讲</td><td style="padding:12px">14讲</td><td style="padding:12px">★★★★</td><td style="padding:12px"><a href="#v8" style="color:#7dd3fc">B站 iframe</a></td></tr>
           </tbody>
         </table>
       </div>
@@ -433,6 +470,26 @@ yangList.forEach(function(v,i){
   yangpl.appendChild(d);
 });
 
+// V8 沐江2025新版培训播放列表
+var v8List=[
+  {bvid:'BV1bLCpBXE5c',title:'第 1 讲 · Ribbon 界面、选项卡与命令组介绍',dur:'04:52',desc:'2025 新版 Ribbon 界面的选项卡与命令组结构介绍，认识新版操作入口。'},
+  {bvid:'BV1bLCpBXE6u',title:'第 5 讲 · 显示传统菜单',dur:'03:35',desc:'2025 新版如何显示传统菜单，兼容旧版操作习惯。'},
+  {bvid:'BV1bLCpBXEyV',title:'第 6 讲 · 快捷键的定制和导入导出',dur:'06:29',desc:'2025 新版快捷键定制、导入导出与团队配置共享。'},
+  {bvid:'BV1bLCpBXELe',title:'第 7 讲 · 导航器概念、树形/列表视图、筛选',dur:'04:55',desc:'导航器的概念、用途、树形视图与列表视图、筛选功能。'},
+  {bvid:'BV1bLCpBXEBC',title:'第 10 讲 · 插入符号',dur:'05:51',desc:'2025 新版插入符号操作与符号库使用。'},
+  {bvid:'BV185CpBWEbB',title:'第 11 讲 · 插入设备',dur:'04:55',desc:'插入设备操作，设备与符号的区别与关联。'},
+  {bvid:'BV185CpBWExu',title:'第 12 讲 · 插入宏',dur:'04:51',desc:'插入宏操作，窗口宏/符号宏/页宏的快速插入。'},
+  {bvid:'BV185CpBWEtR',title:'第 14 讲 · 查找及收藏的导入导出',dur:'04:17',desc:'查找功能与收藏的导入导出，跨项目复用配置。'}
+];
+var v8pl=document.getElementById('v8-playlist');
+v8List.forEach(function(v,i){
+  var d=document.createElement('div');
+  d.className='item'+(i===0?' active':'');
+  d.innerHTML='<span class="idx">'+(i+1)+'</span><div><div class="ttl">'+v.title+'</div><div class="dur">'+v.dur+'</div></div>';
+  d.onclick=function(){playBvid('v8-player',v.bvid,v.title,v.desc,'v8-now-title','v8-now-desc',this);};
+  v8pl.appendChild(d);
+});
+
 function playAid(playerId,aid,page,title,desc,titleEl,descEl,el){
   document.querySelectorAll('#'+playerId.replace('player','')+'playlist .item, #'+(playerId==='v1-player'?'v1-playlist':'')+' .item').forEach(function(x){x.classList.remove('active');});
   el.classList.add('active');
@@ -450,7 +507,7 @@ function playBvid(playerId,bvid,title,desc,titleEl,descEl,el){
   f.src='//player.bilibili.com/player.html?bvid='+bvid+'&page=1&high_quality=1&danmaku=0&autoplay=1&muted=0';
   document.getElementById(titleEl).textContent=title;
   document.getElementById(descEl).textContent=desc;
-  var m={'v5-player':{s:'EPLAN 官方',u:'videos/index.html#v5'},'yang-player':{s:'电工杨小飞',u:'videos/index.html#v6'}}[playerId];
+  var m={'v5-player':{s:'EPLAN 官方',u:'videos/index.html#v5'},'yang-player':{s:'电工杨小飞',u:'videos/index.html#v6'},'v8-player':{s:'沐江电气',u:'videos/index.html#v8'}}[playerId];
   if(m&&window.EplanHistory){EplanHistory.recordVideo({title:title,source:m.s,url:m.u});}
 }
 </script>
