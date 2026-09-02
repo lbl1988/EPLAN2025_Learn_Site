@@ -31,6 +31,7 @@
       <a class="btn btn-primary" href="#v1">🎬 从 EPLAN 官方系统课开始</a>
       <a class="btn btn-ghost" href="#v5">📦 看 3D Pro Panel 官方中文</a>
     </div>
+    <p style="margin-top:18px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.06);padding:10px 14px;border-radius:8px;border:1px solid var(--line)">💡 高清提示：站内已启用 B 站高清模式（关弹幕 + 全功能播放器，已移除 sandbox 限制）。B 站嵌入清晰度受官方策略限制，若需 1080P+ 原画，可点击每个视频下方的「视频地址」在 B 站观看最高清版本。</p>
   </div>
 </section>
 
@@ -47,12 +48,12 @@
         <div class="video-card">
           <div class="video-frame">
             <iframe id="v1-player"
-              src="//player.bilibili.com/player.html?aid=460982393&page=1&high_quality=1&autoplay=0&muted=0"
+              src="//player.bilibili.com/player.html?aid=460982393&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
               title="EPLAN官方中文入门培训"
               allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
               allowfullscreen
               scrolling="no"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"></iframe>
+             ></iframe>
           </div>
           <div class="body">
             <div class="meta">
@@ -85,12 +86,12 @@
         <div class="video-card">
           <div class="video-frame">
             <iframe
-              src="//player.bilibili.com/player.html?bvid=BV1yu411a7mE&page=1&high_quality=1&autoplay=0&muted=0"
+              src="//player.bilibili.com/player.html?bvid=BV1yu411a7mE&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
               title="ePLAN P8零基础教学"
               allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
               allowfullscreen
               scrolling="no"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"></iframe>
+             ></iframe>
           </div>
           <div class="body">
             <div class="meta">
@@ -136,12 +137,12 @@
         <div class="video-card">
           <div class="video-frame">
             <iframe
-              src="//player.bilibili.com/player.html?bvid=BV1iUstzDERy&page=1&high_quality=1&autoplay=0&muted=0"
+              src="//player.bilibili.com/player.html?bvid=BV1iUstzDERy&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
               title="EPLAN P8 教程全集"
               allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
               allowfullscreen
               scrolling="no"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"></iframe>
+             ></iframe>
           </div>
           <div class="body">
             <div class="meta">
@@ -177,12 +178,12 @@
         <div class="video-card">
           <div class="video-frame">
             <iframe
-              src="//player.bilibili.com/player.html?bvid=BV11VGXzqEy8&page=1&high_quality=1&autoplay=0&muted=0"
+              src="//player.bilibili.com/player.html?bvid=BV11VGXzqEy8&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
               title="一小时速学EPLAN图纸绘制"
               allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
               allowfullscreen
               scrolling="no"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"></iframe>
+             ></iframe>
           </div>
           <div class="body">
             <div class="meta">
@@ -220,12 +221,12 @@
         <div class="video-card">
           <div class="video-frame">
             <iframe id="v5-player"
-              src="//player.bilibili.com/player.html?bvid=BV1s7411G7uz&page=1&high_quality=1&autoplay=0&muted=0"
+              src="//player.bilibili.com/player.html?bvid=BV1s7411G7uz&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
               title="EPLAN Pro Panel 官方中文"
               allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
               allowfullscreen
               scrolling="no"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"></iframe>
+             ></iframe>
           </div>
           <div class="body">
             <div class="meta">
@@ -259,12 +260,12 @@
         <div class="video-card">
           <div class="video-frame" id="yang-frame-wrap">
             <iframe id="yang-player"
-              src="//player.bilibili.com/player.html?bvid=BV12rCcBxESU&page=1&high_quality=1&autoplay=0&muted=0"
+              src="//player.bilibili.com/player.html?bvid=BV12rCcBxESU&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
               title="杨小飞 EPLAN 绘图"
               allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
               allowfullscreen
               scrolling="no"
-              sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-presentation"></iframe>
+             ></iframe>
           </div>
           <div class="body">
             <div class="meta">
@@ -435,7 +436,7 @@ function playAid(playerId,aid,page,title,desc,titleEl,descEl,el){
   document.querySelectorAll('#'+playerId.replace('player','')+'playlist .item, #'+(playerId==='v1-player'?'v1-playlist':'')+' .item').forEach(function(x){x.classList.remove('active');});
   el.classList.add('active');
   var f=document.getElementById(playerId);
-  f.src='//player.bilibili.com/player.html?aid='+aid+'&page='+page+'&high_quality=1&autoplay=1&muted=0';
+  f.src='//player.bilibili.com/player.html?aid='+aid+'&page='+page+'&high_quality=1&danmaku=0&autoplay=1&muted=0';
   document.getElementById(titleEl).textContent=title;
   document.getElementById(descEl).textContent=desc;
 }
@@ -443,7 +444,7 @@ function playBvid(playerId,bvid,title,desc,titleEl,descEl,el){
   document.querySelectorAll(el.parentNode.children).forEach(function(x){x.classList.remove('active');});
   el.classList.add('active');
   var f=document.getElementById(playerId);
-  f.src='//player.bilibili.com/player.html?bvid='+bvid+'&page=1&high_quality=1&autoplay=1&muted=0';
+  f.src='//player.bilibili.com/player.html?bvid='+bvid+'&page=1&high_quality=1&danmaku=0&autoplay=1&muted=0';
   document.getElementById(titleEl).textContent=title;
   document.getElementById(descEl).textContent=desc;
 }
