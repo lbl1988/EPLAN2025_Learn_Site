@@ -86,8 +86,8 @@
       <div class="grid g2" style="grid-template-columns:2fr 1fr;align-items:start">
         <div class="video-card">
           <div class="video-frame">
-            <iframe
-              src="//player.bilibili.com/player.html?bvid=BV1yu411a7mE&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
+            <iframe id="v2-player"
+              src="//player.bilibili.com/player.html?bvid=BV1yu411a7mE&page=6&high_quality=1&danmaku=0&autoplay=0&muted=0"
               title="ePLAN P8零基础教学"
               allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
               allowfullscreen
@@ -99,28 +99,28 @@
               <span class="badge bili">B站</span>
               <span class="badge 配套">配套</span>
               <span>来源：工控平台</span>
-              <span>本页播放：第六讲·项目结构搭建</span>
+              <span id="v2-now-title">第 6 讲 · 项目结构搭建</span>
             </div>
-            <h3>第六讲：项目结构搭建</h3>
-            <p>结构标识符管理之后，本讲动手搭建完整项目结构，理解高层代号、位置代号、安装代号如何组织成树状项目结构，为后续绘制原理图打基础。</p>
+            <h3 id="v2-now-h">第六讲：项目结构搭建</h3>
+            <p id="v2-now-desc">结构标识符管理之后，本讲动手搭建完整项目结构，理解高层代号、位置代号、安装代号如何组织成树状项目结构，为后续绘制原理图打基础。</p>
             <p style="margin-top:12px;font-size:13px;color:var(--muted)">完整 30 讲合集：<a href="https://www.bilibili.com/video/BV1yu411a7mE/" target="_blank">电气设计！ePLAN P8零基础教学（B站）</a>　·　UP 主：<a href="https://space.bilibili.com/621962315" target="_blank">工控平台</a></p>
           </div>
         </div>
 
         <div class="card">
-          <h3>📚 30 讲目录（合集内）</h3>
-          <div class="playlist">
-            <div class="item"><span class="idx">1</span><div><div class="ttl">第 1 讲 · 软件介绍与课程设置</div></div></div>
-            <div class="item"><span class="idx">3</span><div><div class="ttl">第 3 讲 · 软件操作界面的设置</div></div></div>
-            <div class="item"><span class="idx">4</span><div><div class="ttl">第 4 讲 · 如何建立新项目</div></div></div>
-            <div class="item"><span class="idx">5</span><div><div class="ttl">第 5 讲 · 结构标识符管理</div></div></div>
-            <div class="item active"><span class="idx">6</span><div><div class="ttl">第 6 讲 · 项目结构搭建（本页）</div></div></div>
-            <div class="item"><span class="idx">11</span><div><div class="ttl">第 11 讲 · 电源的引入与分配原理图</div></div></div>
-            <div class="item"><span class="idx">16</span><div><div class="ttl">第 16 讲 · 部件库的应用</div></div></div>
-            <div class="item"><span class="idx">20</span><div><div class="ttl">第 20 讲 · 电机正反转原理图绘制</div></div></div>
-            <div class="item"><span class="idx">22</span><div><div class="ttl">第 22 讲 · 连接符号的使用</div></div></div>
-            <div class="item"><span class="idx">29</span><div><div class="ttl">第 29 讲 · 什么是电缆定义</div></div></div>
-            <div class="item"><span class="idx">30</span><div><div class="ttl">第 30 讲 · 屏蔽线与线束的使用</div></div></div>
+          <h3>📚 30 讲目录（合集内 · 可点击切换）</h3>
+          <div class="playlist" id="v2-playlist">
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 1 讲 · 软件介绍与课程设置','从软件介绍、课程框架、工程应用场景建立全局认知。','v2-now-title','v2-now-desc',this,1);document.getElementById('v2-now-h').textContent='第一讲：软件介绍与课程设置'"><span class="idx">1</span><div><div class="ttl">第 1 讲 · 软件介绍与课程设置</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 3 讲 · 软件操作界面的设置','菜单、工具栏、导航器、图框页等常用操作区全面配置。','v2-now-title','v2-now-desc',this,3);document.getElementById('v2-now-h').textContent='第三讲：软件操作界面设置'"><span class="idx">3</span><div><div class="ttl">第 3 讲 · 软件操作界面的设置</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 4 讲 · 如何建立新项目','从模板/向导创建项目，理解工程属性与基础设置。','v2-now-title','v2-now-desc',this,4);document.getElementById('v2-now-h').textContent='第四讲：如何建立新项目'"><span class="idx">4</span><div><div class="ttl">第 4 讲 · 如何建立新项目</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 5 讲 · 结构标识符管理','高层代号/位置代号/安装代号三层结构标识符详解。','v2-now-title','v2-now-desc',this,5);document.getElementById('v2-now-h').textContent='第五讲：结构标识符管理'"><span class="idx">5</span><div><div class="ttl">第 5 讲 · 结构标识符管理</div></div></div>
+            <div class="item active" onclick="playBvid('v2-player','BV1yu411a7mE','第 6 讲 · 项目结构搭建（本页）','动手搭建完整项目结构，组织成树状项目结构，为原理图绘制打基础。','v2-now-title','v2-now-desc',this,6);document.getElementById('v2-now-h').textContent='第六讲：项目结构搭建'"><span class="idx">6</span><div><div class="ttl">第 6 讲 · 项目结构搭建（本页）</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 11 讲 · 电源的引入与分配原理图','配电柜主电源引入、分配回路、过载保护原理图规范绘制。','v2-now-title','v2-now-desc',this,11);document.getElementById('v2-now-h').textContent='第十一讲：电源引入与分配原理图'"><span class="idx">11</span><div><div class="ttl">第 11 讲 · 电源的引入与分配原理图</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 16 讲 · 部件库的应用','部件库查找、插入、编辑与自定义部件，是真正工程交付的关键。','v2-now-title','v2-now-desc',this,16);document.getElementById('v2-now-h').textContent='第十六讲：部件库的应用'"><span class="idx">16</span><div><div class="ttl">第 16 讲 · 部件库的应用</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 20 讲 · 电机正反转原理图绘制','经典电机正反转控制电路原理图规范绘制，是练手的最好题目。','v2-now-title','v2-now-desc',this,20);document.getElementById('v2-now-h').textContent='第二十讲：电机正反转原理图绘制'"><span class="idx">20</span><div><div class="ttl">第 20 讲 · 电机正反转原理图绘制</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 22 讲 · 连接符号的使用','T形连接、中断点、跨页跳转、连接编号的规范设置。','v2-now-title','v2-now-desc',this,22);document.getElementById('v2-now-h').textContent='第二十二讲：连接符号的使用'"><span class="idx">22</span><div><div class="ttl">第 22 讲 · 连接符号的使用</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 29 讲 · 什么是电缆定义','电缆定义、芯线分配、屏蔽层处理、连接电缆规范。','v2-now-title','v2-now-desc',this,29);document.getElementById('v2-now-h').textContent='第二十九讲：什么是电缆定义'"><span class="idx">29</span><div><div class="ttl">第 29 讲 · 什么是电缆定义</div></div></div>
+            <div class="item" onclick="playBvid('v2-player','BV1yu411a7mE','第 30 讲 · 屏蔽线与线束的使用','屏蔽线、双绞线、工业线束、线径颜色的综合应用，项目最后收官。','v2-now-title','v2-now-desc',this,30);document.getElementById('v2-now-h').textContent='第三十讲：屏蔽线与线束的使用'"><span class="idx">30</span><div><div class="ttl">第 30 讲 · 屏蔽线与线束的使用</div></div></div>
           </div>
           <p style="margin-top:12px"><a class="btn btn-brand" href="https://www.bilibili.com/video/BV1yu411a7mE/" target="_blank">B站看完整 30 讲 →</a></p>
         </div>
@@ -671,24 +671,24 @@ v11List.forEach(function(v,i){
 });
 
 function playAid(playerId,aid,page,title,desc,titleEl,descEl,el){
-  document.querySelectorAll('#'+playerId.replace('player','')+'playlist .item, #'+(playerId==='v1-player'?'v1-playlist':'')+' .item').forEach(function(x){x.classList.remove('active');});
-  el.classList.add('active');
+  if(el&&el.parentNode){try{var sibs=el.parentNode.children;for(var i=0;i<sibs.length;i++)sibs[i].classList.remove('active');}catch(e){}}
+  if(el)el.classList.add('active');
   var f=document.getElementById(playerId);
   f.src='//player.bilibili.com/player.html?aid='+aid+'&page='+page+'&high_quality=1&danmaku=0&autoplay=1&muted=0';
-  document.getElementById(titleEl).textContent=title;
-  document.getElementById(descEl).textContent=desc;
+  if(titleEl)try{document.getElementById(titleEl).textContent=title;}catch(e){}
+  if(descEl)try{document.getElementById(descEl).textContent=desc;}catch(e){}
   var m={'v1-player':{s:'EPLAN 官方',u:'videos/index.html#v1'}}[playerId];
   if(m&&window.EplanHistory){EplanHistory.recordVideo({title:title,source:m.s,url:m.u});}
 }
 function playBvid(playerId,bvid,title,desc,titleEl,descEl,el,page){
-  document.querySelectorAll(el.parentNode.children).forEach(function(x){x.classList.remove('active');});
-  el.classList.add('active');
+  if(el&&el.parentNode){try{var sibs=el.parentNode.children;for(var i=0;i<sibs.length;i++)sibs[i].classList.remove('active');}catch(e){}}
+  if(el)el.classList.add('active');
   var f=document.getElementById(playerId);
   var pg=page||1;
   f.src='//player.bilibili.com/player.html?bvid='+bvid+'&page='+pg+'&high_quality=1&danmaku=0&autoplay=1&muted=0';
-  document.getElementById(titleEl).textContent=title;
-  document.getElementById(descEl).textContent=desc;
-  var m={'v5-player':{s:'EPLAN 官方',u:'videos/index.html#v5'},'yang-player':{s:'电工杨小飞',u:'videos/index.html#v6'},'v8-player':{s:'沐江电气',u:'videos/index.html#v8'},'v9-player':{s:'电气知识共享',u:'videos/index.html#v9'},'v10-player':{s:'电气设计圈',u:'videos/index.html#v10'},'v11-player':{s:'工控圈',u:'videos/index.html#v11'}}[playerId];
+  if(titleEl)try{document.getElementById(titleEl).textContent=title;}catch(e){}
+  if(descEl)try{document.getElementById(descEl).textContent=desc;}catch(e){}
+  var m={'v5-player':{s:'EPLAN 官方',u:'videos/index.html#v5'},'yang-player':{s:'电工杨小飞',u:'videos/index.html#v6'},'v8-player':{s:'沐江电气',u:'videos/index.html#v8'},'v9-player':{s:'电气知识共享',u:'videos/index.html#v9'},'v10-player':{s:'电气设计圈',u:'videos/index.html#v10'},'v11-player':{s:'工控圈',u:'videos/index.html#v11'},'v2-player':{s:'工控平台',u:'videos/index.html#v2'},'v3-player':{s:'自学电控',u:'videos/index.html#v3'},'v4-player':{s:'吴技可施',u:'videos/index.html#v4'}}[playerId];
   if(m&&window.EplanHistory){EplanHistory.recordVideo({title:title,source:m.s,url:m.u});}
 }
 </script>
