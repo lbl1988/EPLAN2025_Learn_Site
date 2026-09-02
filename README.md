@@ -49,12 +49,13 @@ EPLAN2025_Learn_Site/
 
 | # | 来源 | 语言 | 权威性 | 嵌入方式 |
 | --- | --- | --- | --- | --- |
-| V1 | EPLAN Japan 官方 V2025 介绍 | 日文 | ★★★★★ | YouTube iframe（16 段章节跳转） |
-| V2 | B 站 · 电工杨小飞《EPLAN 绘图》19 讲 | 中文 | ★★★★ | B 站 player iframe（JS 播放列表） |
-| V3 | eplancenter · Free EPLAN Training 20 课 | 英文 | ★★★★ | 引导卡片 |
-| V4 | EPLAN 官方 eLearning（Education for Students） | 14 语 | ★★★★★ | 引导卡片 |
-| V5 | EPLAN Germany 官方 2025 预压电缆演示 | 德/英 | ★★★★★ | Vimeo iframe |
-| V6 | 张海如 EPLAN 教程 66 讲 | 中文 | ★★★ | 引导卡片 |
+| V1 | EPLAN 官方中文 · 入门培训 16 讲 | 中文 | ★★★★★ | B 站 iframe（JS 播放列表） |
+| V2 | 工控平台 · ePLAN P8 零基础 30 讲 | 中文 | ★★★★ | B 站 iframe |
+| V3 | 自学电控 · EPLAN P8 教程 15.5h 全集 | 中文 | ★★★★ | B 站 iframe |
+| V4 | 吴技可施 · 一小时速学 EPLAN 绘图 | 中文 | ★★★ | B 站 iframe |
+| V5 | EPLAN 官方中文 · Pro Panel 3D 系列 | 中文 | ★★★★★ | B 站 iframe（JS 播放列表） |
+| V6 | 电工杨小飞 19 讲 + 张海如 66 讲 | 中文 | ★★★★ | B 站 iframe + 引导卡片 |
+| V7 | 亿道/锌锦 · 2025 新功能中文图文 | 中文 | ★★★★ | 引导卡片 |
 
 详见 [视频中心](videos/index.html)。
 
@@ -132,19 +133,18 @@ EPLAN Electric P8 是全球电气工程师公认的行业级 ECAD 软件，2025 
 
 | # | 来源 | 标题/系列 | 语言 | 时长/集数 | 权威性 | 嵌入方式 |
 | --- | --- | --- | --- | --- | --- | --- |
-| V1 | EPLAN Japan 官方 | Eplan プラットフォーム V2025 紹介 | 日文/含日文字幕 | ~1h（带章节时间戳） | ★★★★★ 厂商官方 | YouTube iframe |
-| V2 | B 站 UP 主"电工杨小飞" | 电工知识库·EPLAN 绘图合集 | 中文 | 19 讲，每讲 20-40 分钟 | ★★★★ 系统化中文实战 | B 站 player iframe |
-| V3 | eplancenter.com | Free EPLAN Training（20 免费课） | 英文 | 6h15m，90+ 讲全集 | ★★★★ 真实项目驱动 | 链接卡片 + 引导 |
-| V4 | EPLAN 官方 eLearning | Eplan Education for Students | 14 种语言 | 互动式课程 + Quiz | ★★★★★ 厂商官方 | 链接卡片 + 引导 |
-| V5 | EPLAN Germany 官方博客 | What's New P8 2025（预压电缆） | 德文/英文字幕 | Vimeo 短片 | ★★★★★ 厂商官方 | Vimeo iframe |
-| V6 | 张海如 | EPLAN 视频教程 | 中文 | 66 讲，1.29G | ★★★ 综合老牌教程 | 链接卡片 + 引导 |
+| V1 | EPLAN 官方中文频道 | Electric P8 入门培训 | 中文 | 16 讲 / 2:36:08 | ★★★★★ 厂商官方 | B 站 iframe |
+| V2 | 工控平台 | ePLAN P8 零基础教学 | 中文 | 30 讲 | ★★★★ 系统化零基础 | B 站 iframe |
+| V3 | 自学电控 | EPLAN P8 教程全集 | 中文 | 15:34:29 | ★★★★ 超长全集 | B 站 iframe |
+| V4 | 吴技可施 | 一小时速学 EPLAN 绘图 | 中文 | 41:24 | ★★★ 速成入门 | B 站 iframe |
+| V5 | EPLAN 官方中文频道 | Pro Panel 3D 布局布线系列 | 中文 | 3 讲 | ★★★★★ 厂商官方 | B 站 iframe |
+| V6 | 电工杨小飞 + 张海如 | EPLAN 绘图实战合集 | 中文 | 19+66 讲 | ★★★★ 中文实战 | B 站 iframe + 引导 |
+| V7 | 亿道数字/山东锌锦 | 2025 新功能中文图文 | 中文 | 图文 | ★★★★ 中文解读 | 引导卡片 |
 
 ### 嵌入策略
 
 - **B 站视频**：使用 `//player.bilibili.com/player.html?bvid=xxx&page=N&high_quality=1` iframe 嵌入，符合用户"移动端应用内直接播放，不跳转 B 站"的偏好。每个 BV 号对应一讲，按合集顺序排成播放列表。
-- **YouTube 视频**：使用 `https://www.youtube.com/embed/xxx` iframe 嵌入，启用 `accelerometer; autoplay; clipboard-write; encrypted-media` 权限。
-- **Vimeo 视频**：使用 `https://player.vimeo.com/video/xxx` iframe 嵌入。
-- **无法直接 iframe 的课程页**（eplancenter、EPLAN Education）：以引导卡片形式呈现，点击新窗口打开，避免破坏站内沉浸式学习体验。
+- **2025 新功能图文**：EPLAN 2025 新功能的中文系统视频尚未发布，以亿道数字、山东锌锦等中文图文深度解读为引导卡片，配合官方 16 讲与 Pro Panel 系列食用；官方原文博客/帮助可用浏览器一键翻译成中文对照阅读。
 
 ### 选用的 B 站视频 BV 号（杨小飞合集核心讲次）
 
