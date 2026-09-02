@@ -18,6 +18,7 @@
       <a href="../engineering/index.html">工程化</a>
       <a href="index.html">视频中心</a>
       <a href="../resources/index.html">资源下载</a>
+      <a href="../history.html">我的记录</a>
     </nav>
   </div>
 </header>
@@ -439,6 +440,8 @@ function playAid(playerId,aid,page,title,desc,titleEl,descEl,el){
   f.src='//player.bilibili.com/player.html?aid='+aid+'&page='+page+'&high_quality=1&danmaku=0&autoplay=1&muted=0';
   document.getElementById(titleEl).textContent=title;
   document.getElementById(descEl).textContent=desc;
+  var m={'v1-player':{s:'EPLAN 官方',u:'videos/index.html#v1'}}[playerId];
+  if(m&&window.EplanHistory){EplanHistory.recordVideo({title:title,source:m.s,url:m.u});}
 }
 function playBvid(playerId,bvid,title,desc,titleEl,descEl,el){
   document.querySelectorAll(el.parentNode.children).forEach(function(x){x.classList.remove('active');});
@@ -447,8 +450,12 @@ function playBvid(playerId,bvid,title,desc,titleEl,descEl,el){
   f.src='//player.bilibili.com/player.html?bvid='+bvid+'&page=1&high_quality=1&danmaku=0&autoplay=1&muted=0';
   document.getElementById(titleEl).textContent=title;
   document.getElementById(descEl).textContent=desc;
+  var m={'v5-player':{s:'EPLAN 官方',u:'videos/index.html#v5'},'yang-player':{s:'电工杨小飞',u:'videos/index.html#v6'}}[playerId];
+  if(m&&window.EplanHistory){EplanHistory.recordVideo({title:title,source:m.s,url:m.u});}
 }
 </script>
 
+<script src="../js/history.js"></script>
+<script>EplanHistory.autoBrowse()</script>
 </body>
 </html>

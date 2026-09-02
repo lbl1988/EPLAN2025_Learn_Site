@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的记录 · EPLAN 2025 学习站</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="dot"></span>EPLAN 2025 学习站</a>
+    <nav class="nav-links">
+      <a href="courses/beginner.html">入门篇</a>
+      <a href="courses/intermediate.html">进阶篇</a>
+      <a href="courses/advanced.html">精通篇</a>
+      <a href="engineering/index.html">工程化</a>
+      <a href="videos/index.html">视频中心</a>
+      <a href="resources/index.html">资源下载</a>
+      <a href="history.html" style="color:var(--brand)">我的记录</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#7dd3fc">我的记录</span>
+    <h1>你的学习足迹，本地保存</h1>
+    <p>所有观看与浏览记录仅保存在<strong>你的浏览器本地</strong>（localStorage），不上传服务器，换设备或清缓存后会重置。</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="videos/index.html">🎬 去视频中心继续学习</a>
+      <button class="btn btn-ghost" id="clear-all">🗑 清空全部记录</button>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!-- 观看记录 -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px">
+        <div>
+          <span class="eyebrow">观看记录</span>
+          <h2>看过的视频</h2>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="clear-view">清空观看记录</button>
+      </div>
+      <p class="lead">最近在站内播放过的视频，按时间倒序，点击可继续观看。</p>
+      <div id="view-list" class="hist-grid"></div>
+    </div>
+  </section>
+
+  <!-- 浏览记录 -->
+  <section class="section" style="background:#eef4fb">
+    <div class="wrap">
+      <div class="section-head" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px">
+        <div>
+          <span class="eyebrow">浏览记录</span>
+          <h2>访问过的页面</h2>
+        </div>
+        <button class="btn btn-ghost btn-sm" id="clear-browse">清空浏览记录</button>
+      </div>
+      <p class="lead">最近浏览过的页面，方便回溯上次学到哪。</p>
+      <div id="browse-list" class="hist-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html" style="color:#fff"><span class="dot"></span>EPLAN 2025 学习站</a>
+      <p style="margin-top:8px;max-width:520px">记录仅存于本地浏览器，保护隐私，不随账号同步。</p>
+    </div>
+    <div>
+      <p style="margin:0 0 8px;font-weight:700;color:#cbd5e1">快速导航</p>
+      <p style="margin:0"><a href="courses/beginner.html">入门篇</a> · <a href="courses/intermediate.html">进阶篇</a> · <a href="courses/advanced.html">精通篇</a></p>
+      <p style="margin:6px 0 0"><a href="engineering/index.html">工程化</a> · <a href="videos/index.html">视频</a> · <a href="resources/index.html">资源</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/history.js"></script>
+<script>
+EplanHistory.autoBrowse();
+function esc(s){return String(s||'').replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function renderView(){
+  var arr=EplanHistory.getView();
+  var el=document.getElementById('view-list');
+  if(!arr.length){el.innerHTML='<p class="empty">还没有观看记录，去 <a href="videos/index.html">视频中心</a> 看个视频试试吧。</p>';return}
+  el.innerHTML=arr.map(function(v){
+    var href=v.url||'videos/index.html';
+    return '<a class="hist-card" href="'+esc(href)+'">'+
+      '<div class="hc-ico">🎬</div>'+
+      '<div class="hc-main">'+
+        '<div class="hc-title">'+esc(v.title)+'</div>'+
+        '<div class="hc-meta"><span class="tag">'+esc(v.source||'视频')+'</span>'+
+        (v.section?'<span>'+esc(v.section)+'</span>':'')+
+        '<span class="time">'+EplanHistory.fmt(v.ts)+'</span></div>'+
+      '</div></a>';
+  }).join('');
+}
+function renderBrowse(){
+  var arr=EplanHistory.getBrowse();
+  var el=document.getElementById('browse-list');
+  if(!arr.length){el.innerHTML='<p class="empty">还没有浏览记录。</p>';return}
+  el.innerHTML=arr.map(function(v){
+    var href=v.url||'#';
+    var label=v.url==='/'||v.url==='/index.html'?'首页':v.title;
+    return '<a class="hist-card browse" href="'+esc(href)+'">'+
+      '<div class="hc-ico">📄</div>'+
+      '<div class="hc-main">'+
+        '<div class="hc-title">'+esc(label)+'</div>'+
+        '<div class="hc-meta"><span class="time">'+EplanHistory.fmt(v.ts)+'</span></div>'+
+      '</div></a>';
+  }).join('');
+}
+renderView();
+renderBrowse();
+document.getElementById('clear-view').onclick=function(){EplanHistory.clearView();renderView()};
+document.getElementById('clear-browse').onclick=function(){EplanHistory.clearBrowse();renderBrowse()};
+document.getElementById('clear-all').onclick=function(){EplanHistory.clearAll();renderView();renderBrowse()};
+</script>
+</body>
+</html>

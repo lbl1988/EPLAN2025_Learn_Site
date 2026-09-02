@@ -196,3 +196,19 @@ code,pre,.mono{font-family:"JetBrains Mono","Consolas","Courier New",monospace}
   .nav-links{margin-left:0;width:100%;justify-content:flex-start}
   .section h2{font-size:24px}
 }
+
+/* 我的记录页 */
+.hist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:20px}
+.hist-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);transition:box-shadow .2s,transform .2s,border-color .2s}
+.hist-card:hover{box-shadow:0 8px 24px rgba(0,82,147,.12);transform:translateY(-2px);border-color:var(--brand)}
+.hist-card .hc-ico{font-size:24px;line-height:1.4;flex-shrink:0}
+.hist-card .hc-main{flex:1;min-width:0}
+.hist-card .hc-title{font-weight:600;font-size:15px;color:var(--ink);margin-bottom:6px;line-height:1.4}
+.hist-card .hc-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted);align-items:center}
+.hist-card .hc-meta .tag{background:rgba(0,82,147,.1);color:var(--brand);padding:2px 8px;border-radius:10px;font-weight:600}
+.hist-card .hc-meta .time{margin-left:auto}
+.hist-card.browse{align-items:center}
+.empty{padding:28px;text-align:center;color:var(--muted);background:rgba(255,255,255,.5);border:1px dashed var(--line);border-radius:12px}
+.empty a{color:var(--brand);font-weight:600}
+.btn-sm{padding:8px 14px;font-size:13px}
+.nav-links a[href*="history"]{font-weight:700}
