@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EPLAN Electric P8 2025 入门篇：从零认识 EPLAN 平台、项目结构、界面导航器、IEC 符号、设备标识、连接与跨页连接，最终画出电机启停标准控制电路。">
 <title>入门篇 · EPLAN 2025 学习站</title>
 <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -27,7 +28,7 @@
   <div class="wrap">
     <span class="eyebrow" style="color:#7dd3fc">入门篇 · 约 2 周</span>
     <h1>打基础 · 从零认识 EPLAN 并画出第一张原理图</h1>
-    <p>本阶段目标：理解 EPLAN 的项目结构与界面分区，掌握符号插入与连接，能独立绘制电机启停标准控制电路。建议配合<a href="../videos/index.html#v2">B 站杨小飞中文系统课</a>边看边练。</p>
+    <p>本阶段目标：理解 EPLAN 的项目结构与界面分区，掌握符号插入与连接，能独立绘制电机启停标准控制电路。建议配合<a href="../videos/index.html#v2">B 站工控平台中文系统课</a>边看边练。</p>
     <div class="cta">
       <a class="btn btn-primary" href="#topics">📚 查看主题清单</a>
       <a class="btn btn-ghost" href="../videos/index.html#v2">🎬 配套视频</a>
@@ -41,7 +42,7 @@
     <div class="wrap">
       <span class="eyebrow">主题清单</span>
       <h2>入门篇 8 个主题</h2>
-      <p class="lead">绿色「配套」标记的主题，已在视频中心提供内嵌视频或在资源页提供示例工程下载。</p>
+      <p class="lead">绿色「配套」标记的主题，已在视频中心提供内嵌视频或在资源页提供示例工程下载。每个主题包含核心概念、操作步骤和常见错误。</p>
 
       <div class="grid g2">
 
@@ -49,44 +50,154 @@
           <span class="num-badge">1</span>
           <h3>EPLAN 平台与 Electric P8 概念</h3>
           <p>ECAD vs CAD 的本质区别、EPLAN 平台模块总览（Electric P8 / Preplanning / Pro Panel / Harness proD / Cable proD / EEC）。</p>
-          <p style="margin-top:10px"><a href="../videos/index.html#v3">🎬 Lesson 01 →</a></p>
+          <div class="topic-detail">
+            <h4>核心概念</h4>
+            <p>EPLAN 是"工程级 ECAD"平台，不是"画图软件"。与 AutoCAD 的本质区别：EPLAN 以<strong>对象</strong>为中心——每个符号、连接、设备都是有属性的智能对象，而非离散的线条。画完原理图后，端子排、BOM、电缆清单全部自动生成，这是 CAD 做不到的。</p>
+            <p>EPLAN 平台包含六大模块：Electric P8（原理图设计）、Pro Panel（3D 机柜布局）、Cable proD（3D 虚拟布线，2025 新品）、Harness proD（线束设计）、Preplanning（前期规划）、EEC（工程配置）。初学者只需关注 Electric P8，其余模块在精通篇涉及。</p>
+            <h4>关键操作步骤</h4>
+            <ol class="step-list">
+              <li>安装 EPLAN Electric P8 2025（需 Windows 10/11 64 位）</li>
+              <li>首次启动选择许可证类型（试用 30 天 / 正式授权）</li>
+              <li>认识启动界面：项目目录、最近项目、新建项目向导</li>
+              <li>理解 EPLAN 数据库：所有对象存储在 SQL 数据库中，不是文件</li>
+            </ol>
+            <div class="warn-box"><strong>常见错误：</strong>把 EPLAN 当 AutoCAD 用——直接画线而不插入符号。这会导致后续所有报表（BOM、端子排、电缆）全部无法自动生成。正确方式：始终通过"插入符号"放置元器件。</div>
+          </div>
+          <p style="margin-top:10px"><a href="../videos/index.html#v1">🎬 官方第 1 讲 →</a></p>
         </div>
 
         <div class="card">
           <span class="num-badge">2</span>
           <h3>项目结构：项目 / 页 / 页类型 / 图框 / 层</h3>
           <p>项目驱动的组织方式，页类型（多线原理图 / 总览 / 端子排图表 / 电缆图表 / 部件清单），图框与层的概念与作用。</p>
+          <div class="topic-detail">
+            <h4>核心概念</h4>
+            <p>EPLAN 以<strong>项目</strong>为最顶层容器。一个项目 = 一台设备/一个工程的全部电气数据。项目内按<strong>页</strong>组织，每页有类型：</p>
+            <ul style="font-size:14px;margin:4px 0 10px;padding-left:18px">
+              <li><strong>多线原理图页</strong>：主电路+控制电路绘制（最常用）</li>
+              <li><strong>总览页</strong>：系统级框图、电源拓扑</li>
+              <li><strong>端子排图表页</strong>：自动生成端子排图</li>
+              <li><strong>电缆图表页</strong>：自动生成电缆连接表</li>
+              <li><strong>部件清单页</strong>：自动生成 BOM</li>
+            </ul>
+            <p><strong>图框</strong>是页的边框模板，含标题栏（项目名、图号、日期、版本）。<strong>层</strong>用于分组元素（如不同电压等级用不同层），可单独显示/隐藏/锁定。</p>
+            <h4>关键操作步骤</h4>
+            <ol class="step-list">
+              <li>文件 → 新建 → 选择模板（国内项目选 GB）</li>
+              <li>设置项目属性：项目名、客户、创建日期</li>
+              <li>新建页：页类型 = 多线原理图，图框 = GB_A3</li>
+              <li>配置层：建议预设"主电路层""控制电路层""信号层"</li>
+              <li>设置页编号规则：=高层代号 + 位置代号</li>
+            </ol>
+            <div class="tip-box"><strong>提示：</strong>模板选定后中后期更改极麻烦——图框、层、符号库引用都绑在模板上。创建项目时务必确认 GB/IEC 标准。</div>
+          </div>
         </div>
 
         <div class="card">
           <span class="num-badge">3</span>
           <h3>界面分区与导航器</h3>
           <p>页导航器、设备导航器、端子排导航器、电缆导航器、插入中心、部件管理、属性面板。理解 EPLAN "对象 + 属性" 模型。</p>
+          <div class="topic-detail">
+            <h4>核心概念</h4>
+            <p>EPLAN 界面的核心是<strong>导航器</strong>——不是简单的文件树，而是"数据库视图"。每个导航器从不同维度展示项目数据：</p>
+            <ul style="font-size:14px;margin:4px 0 10px;padding-left:18px">
+              <li><strong>页导航器</strong>：按页结构展示，最常用</li>
+              <li><strong>设备导航器</strong>：按设备层级（=高层代号+位置代号+设备标识）</li>
+              <li><strong>端子排导航器</strong>：按端子排分组，管理端子</li>
+              <li><strong>电缆导航器</strong>：电缆及芯线管理</li>
+              <li><strong>插入中心</strong>：搜索并插入符号/部件/宏</li>
+            </ul>
+            <p>EPLAN 的"对象+属性"模型：每个元素（符号、连接、端子）都有属性面板（双击打开）。属性决定报表内容——比如部件的订货号不填，BOM 就缺数据。</p>
+            <h4>关键操作步骤</h4>
+            <ol class="step-list">
+              <li>打开所有导航器：视图 → 导航器 → 勾选全部</li>
+              <li>拖拽导航器面板到合适位置（建议页导航器在左、设备导航器在右）</li>
+              <li>双击任意符号 → 弹出属性对话框 → 查看可编辑属性</li>
+              <li>在插入中心搜索符号：输入关键词（如"接触器"）即可</li>
+            </ol>
+            <div class="tip-box"><strong>提示：</strong>初学者最常忽略导航器。但 EPLAN 的效率恰恰来自导航器——在导航器中拖拽端子可以重排序，在设备导航器中可以批量修改属性。</div>
+          </div>
         </div>
 
         <div class="card">
           <span class="num-badge">4</span>
           <h3>符号库与 IEC 符号</h3>
           <p>IEC 符号标准、插入符号的多种方式（插入中心 / 路径 / 直接）、符号与功能的关系、功能定义。</p>
-          <p style="margin-top:10px"><a href="../videos/index.html#v3">🎬 Lesson 05 →</a></p>
+          <div class="topic-detail">
+            <h4>核心概念</h4>
+            <p>EPLAN 符号库按标准分类：IEC（国际/中国国标）、NFPA（北美）、GOST（俄语区）。国内项目用 IEC 符号库。每个符号有<strong>功能定义</strong>——比如一个方块符号可以是"接触器线圈"也可以是"继电器线圈"，功能定义决定其电气行为。</p>
+            <p>插入符号有三种方式：插入中心搜索（最推荐）、菜单路径插入、直接拖拽。符号插入后会自动获得设备标识（如 -KM1）。</p>
+            <h4>关键操作步骤</h4>
+            <ol class="step-list">
+              <li>插入中心 → 输入"接触器主触点" → 选择 IEC 符号</li>
+              <li>在原理图页中点击放置位置</li>
+              <li>在属性对话框中确认功能定义 = "断路器触点"</li>
+              <li>设置设备标识（DT）或使用自动编号</li>
+              <li>关联部件（选填，进阶篇详解）</li>
+            </ol>
+            <div class="warn-box"><strong>常见错误：</strong>选错符号功能定义。比如把"三相交流电机"符号的功能定义设成了"直流电机"，会导致设备导航器分类错误、报表中设备类型显示异常。插入后务必检查功能定义。</div>
+          </div>
+          <p style="margin-top:10px"><a href="../videos/index.html#v1">🎬 官方第 5 讲 →</a></p>
         </div>
 
         <div class="card">
           <span class="num-badge">5</span>
           <h3>设备标识 (DT) 与命名规则</h3>
           <p>设备标识符 (DT)、自动编号、ID 范围、命名规则配置（依据 GB/IEC 标准）。</p>
+          <div class="topic-detail">
+            <h4>核心概念</h4>
+            <p><strong>设备标识符 (DT)</strong> 是每个设备的唯一编号，如 -KM1、-QF2、-SB3。EPLAN 的 DT 由"标识字母+序号"组成，标识字母依据 GB/T 或 IEC 标准：K = 继电器/接触器、Q = 断路器、S = 开关/按钮、H = 信号器件。</p>
+            <p><strong>自动编号</strong>：EPLAN 可按 ID 范围自动分配序号。比如设 KM 的 ID 范围 1-99，每插入一个接触器自动 +1。<strong>命名规则</strong>可配置编号格式（如带前缀"="高层代号）。</p>
+            <h4>关键操作步骤</h4>
+            <ol class="step-list">
+              <li>选项 → 设置 → 项目 → 设备标识 → 确认标识字母表（GB 标准）</li>
+              <li>设置 ID 范围：每种标识字母的起止序号</li>
+              <li>插入符号时选择"自动编号"或手动输入 DT</li>
+              <li>在设备导航器中检查编号连续性和层级</li>
+              <li>如需批量修改：右键导航器 → 重新编号</li>
+            </ol>
+            <div class="tip-box"><strong>提示：</strong>GB 标准中标识字母是固定的——K 永远是接触器/继电器类，Q 永远是保护器件。不要自创标识字母，否则后续与同事协作时会混淆。</div>
+          </div>
         </div>
 
         <div class="card">
           <span class="num-badge">6</span>
           <h3>连接与连接定义点</h3>
           <p>自动连接、连接定义点、电位传递、连接颜色与编号、刷新连接。</p>
+          <div class="topic-detail">
+            <h4>核心概念</h4>
+            <p>当两个符号的连接点在图上靠在一起时，EPLAN <strong>自动建立电气连接</strong>——不需要画线。这叫"自动连接"。<strong>连接定义点</strong>用于给连接命名（如 L1、N、PE、24V+）和设置属性。</p>
+            <p><strong>电位传递</strong>是 EPLAN 的核心概念：同名连接自动传递电位。比如标记一段导线为"L1"，所有连接到该电位的导线都自动归属 L1 相。这决定了后续报表中的连接分组。</p>
+            <h4>关键操作步骤</h4>
+            <ol class="step-list">
+              <li>插入两个符号（如断路器 + 接触器），让连接点对齐 → 自动连接</li>
+              <li>插入连接定义点 → 输入电位名（如 L1、N、PE）</li>
+              <li>设置连接颜色（选项 → 项目 → 连接 → 颜色编号）</li>
+              <li>刷新连接：右键页 → 更新连接（修改后必须刷新）</li>
+              <li>在连接导航器中检查所有连接是否正确分组</li>
+            </ol>
+            <div class="warn-box"><strong>常见错误：</strong>修改了符号位置或连接后忘记"刷新连接"，导致连接导航器显示陈旧数据、报表中连接关系错误。每次修改原理图后务必刷新连接。</div>
+          </div>
         </div>
 
         <div class="card">
           <span class="num-badge">7</span>
           <h3>中断点与跨页连接</h3>
           <p>中断点的关联与排序、跨页连接的规范、T 形连接、连接导航器的使用。</p>
+          <div class="topic-detail">
+            <h4>核心概念</h4>
+            <p>当连接需要跨越多页时，使用<strong>中断点</strong>。中断点成对出现——"源端"和"目标端"，通过相同的中断点名关联。EPLAN 自动在页边标注目标页码（如"→ 第 3 页 / 2"）。</p>
+            <p><strong>T 形连接</strong>：三根导线的交汇点，EPLAN 自动识别为 T 节点并分配连接。<strong>跨页连接规范</strong>：主电路走第 1 页，控制电路走第 2 页，信号电路走第 3 页，通过中断点关联。</p>
+            <h4>关键操作步骤</h4>
+            <ol class="step-list">
+              <li>插入中断点（源端）→ 输入名称（如"24V+"）</li>
+              <li>在目标页插入中断点（目标端）→ 输入相同名称</li>
+              <li>EPLAN 自动标注交叉引用（页码+位置）</li>
+              <li>用连接导航器检查所有中断点是否正确配对</li>
+              <li>调整中断点排序：导航器中拖拽</li>
+            </ol>
+            <div class="tip-box"><strong>提示：</strong>中断点命名建议用功能名（如"24V+""0V""L1"）而非数字编号。这样修改页码顺序后不需要重新关联。跨页连接的目标页码标注是自动更新的。</div>
+          </div>
         </div>
 
         <div class="card">
@@ -94,7 +205,22 @@
           <span class="num-badge">8</span>
           <h3>第一个项目：电机启停原理图</h3>
           <p>新建项目、选模板、新建页、插入主电路与控制电路符号、连线、生成端子排与 BOM，导出 PDF。</p>
-          <p style="margin-top:10px"><a href="../videos/index.html#v2-6">🎬 配套视频 →</a>　<a href="../resources/index.html#motor">📄 示例工程 →</a></p>
+          <div class="topic-detail">
+            <h4>核心概念</h4>
+            <p>本主题将前 7 个主题串联为一个完整项目：三相电机启停控制。包含：主电路（断路器→接触器→热继电器→电机）、控制电路（急停+点动+自锁+过载指示）。这是 EPLAN 入门的"Hello World"。</p>
+            <h4>关键操作步骤</h4>
+            <ol class="step-list">
+              <li>新建项目 → 选 GB 模板 → 新建多线原理图页</li>
+              <li>主电路：插入 3P 断路器(-QF1) → 接触器主触点(-KM) → 热继电器(-FR) → 三相电机(-M)</li>
+              <li>控制电路：插入急停(-SB1) → 点动按钮(-SB2) → 自锁按钮(-SB3) → 接触器线圈(-KM) → 热继电器常闭触点</li>
+              <li>用连接定义点标记电位：L1/L2/L3（主电路）、控制电源+/-</li>
+              <li>放置中断点连接主电路与控制电路的跨页</li>
+              <li>生成报表：BOM 部件清单 + 端子排图表</li>
+              <li>导出 PDF 汇总</li>
+            </ol>
+            <div class="warn-box"><strong>常见错误：</strong>自锁回路接触器辅助触点与点动按钮并联时方向接反——导致按点动时电机不停。正确的自锁：辅助常开触点并联在自锁按钮两端（不是点动按钮两端）。</div>
+          </div>
+          <p style="margin-top:10px"><a href="../videos/index.html#v2">🎬 配套视频 →</a>　<a href="../resources/index.html#motor">📄 示例工程 →</a></p>
         </div>
 
       </div>
@@ -107,15 +233,15 @@
       <h2 style="color:#fff">入门篇推荐学习顺序</h2>
       <p class="lead" style="color:#94a3b8">若时间紧张，可按下方顺序抓主线，先建立"项目-页-符号-连接"的全局认知，再补细节。</p>
       <div class="playlist">
-        <div class="item"><span class="idx">1</span><div><div class="ttl">看官方 V2025 介绍（前 15 分钟建立全局观）</div><div class="dur">~15m</div></div></div>
-        <div class="item"><span class="idx">2</span><div><div class="ttl">Lesson 01-03：EPLAN 是什么、文档类型、环境与项目搭建</div><div class="dur">~51m</div></div></div>
-        <div class="item"><span class="idx">3</span><div><div class="ttl">第 2 课：菜单栏与绘图工具入门</div><div class="dur">33m</div></div></div>
-        <div class="item"><span class="idx">4</span><div><div class="ttl">第 3 课：动手画第一张三相主电路图</div><div class="dur">31m</div></div></div>
-        <div class="item"><span class="idx">5</span><div><div class="ttl">第 6 课：电机启停（点动+自锁+故障指示）完整电路</div><div class="dur">28m</div></div></div>
-        <div class="item"><span class="idx">6</span><div><div class="ttl">对照示例工程，自己重画一遍并导出 PDF</div><div class="dur">动手</div></div></div>
+        <div class="item" style="cursor:pointer" onclick="window.location.href='../videos/index.html#v1'"><span class="idx">1</span><div><div class="ttl">看官方第 1 讲：设计流程概述（建立全局观）</div><div class="dur">~2m</div></div></div>
+        <div class="item" style="cursor:pointer" onclick="window.location.href='../videos/index.html#v1'"><span class="idx">2</span><div><div class="ttl">官方第 1-5 讲：EPLAN 是什么、工作区、项目、页、设计方法</div><div class="dur">~25m</div></div></div>
+        <div class="item" style="cursor:pointer" onclick="window.location.href='../videos/index.html#v2'"><span class="idx">3</span><div><div class="ttl">工控平台第 2 讲：菜单栏与绘图工具入门</div><div class="dur">~33m</div></div></div>
+        <div class="item" style="cursor:pointer" onclick="window.location.href='../videos/index.html#v2'"><span class="idx">4</span><div><div class="ttl">工控平台第 4 讲：新建项目与页面</div><div class="dur">~31m</div></div></div>
+        <div class="item" style="cursor:pointer" onclick="window.location.href='../videos/index.html#v6'"><span class="idx">5</span><div><div class="ttl">杨小飞第 6 课：电机启停（点动+自锁+故障指示）完整电路</div><div class="dur">~28m</div></div></div>
+        <div class="item" style="cursor:pointer" onclick="window.location.href='../resources/index.html#motor'"><span class="idx">6</span><div><div class="ttl">对照示例工程 BOM，自己重画一遍并导出 PDF</div><div class="dur">动手</div></div></div>
       </div>
       <p style="margin-top:24px">
-        <a class="btn btn-brand" href="../videos/index.html#v1">从官方介绍开始 →</a>
+        <a class="btn btn-brand" href="../videos/index.html#v1">从官方第 1 讲开始 →</a>
         <a class="btn btn-ghost" href="intermediate.html" style="margin-left:10px">下一阶：进阶篇 →</a>
       </p>
     </div>

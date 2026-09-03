@@ -199,6 +199,18 @@ code,pre,.mono{font-family:"JetBrains Mono","Consolas","Courier New",monospace}
 
 /* 我的记录页 */
 .hist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:20px}
+
+/* 教学内容样式 */
+.topic-detail{margin-top:14px;padding-top:14px;border-top:1px dashed var(--line)}
+.topic-detail h4{margin:0 0 6px;font-size:15px;color:var(--brand)}
+.topic-detail p{font-size:14px;color:var(--ink);margin:0 0 10px}
+.step-list{counter-reset:step;list-style:none;padding:0;margin:0 0 10px}
+.step-list li{counter-increment:step;position:relative;padding-left:30px;margin:5px 0;font-size:14px;color:var(--ink)}
+.step-list li::before{content:counter(step);position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--brand);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tip-box{background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px;color:#92400e}
+.tip-box strong{color:#78350f}
+.warn-box{background:#fee2e2;border:1px solid #fca5a5;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13px;color:#991b1b}
+.warn-box strong{color:#7f1d1d}
 .hist-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);transition:box-shadow .2s,transform .2s,border-color .2s}
 .hist-card:hover{box-shadow:0 8px 24px rgba(0,82,147,.12);transform:translateY(-2px);border-color:var(--brand)}
 .hist-card .hc-ico{font-size:24px;line-height:1.4;flex-shrink:0}
