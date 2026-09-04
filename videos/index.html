@@ -49,7 +49,7 @@
         <div class="video-card">
           <div class="video-frame">
             <iframe id="main-player"
-              src="//player.bilibili.com/player.html?bvid=BV15B4y1h75q&page=1&high_quality=1&danmaku=0&autoplay=0&muted=0"
+              src="//player.bilibili.com/player.html?bvid=BV15B4y1h75q&page=1&high_quality=1&q=80&danmaku=0&autoplay=0&muted=0"
               title="工控圈 EPLAN 电气设计实战应用142课"
               allow="fullscreen; encrypted-media; autoplay; picture-in-picture"
               allowfullscreen
@@ -226,13 +226,14 @@
       d.innerHTML='<div class="kp-num">P'+v.p+'</div>'+
         '<div class="kp-main"><div class="kp-title">'+v.title+'</div>'+
         '<div class="kp-desc">'+v.desc+'</div></div>'+
+        '<a class="kp-bili" href="https://www.bilibili.com/video/'+BVID+'?p='+v.p+'" target="_blank" onclick="event.stopPropagation()" title="登录B站看1080P/4K高清">B站看高清</a>'+
         '<div class="kp-tag">'+modules[modIdx].name+'</div>';
       d.onclick=function(){
         var sibs=plEl.children;
         for(var j=0;j<sibs.length;j++)sibs[j].classList.remove("active");
         d.classList.add("active");
         var f=document.getElementById("main-player");
-        f.src="//player.bilibili.com/player.html?bvid="+BVID+"&page="+v.p+"&high_quality=1&danmaku=0&autoplay=1&muted=0";
+        f.src="//player.bilibili.com/player.html?bvid="+BVID+"&page="+v.p+"&high_quality=1&q=80&danmaku=0&autoplay=1&muted=0";
         try{document.getElementById("now-title").textContent="P"+v.p+" "+v.title;}catch(e){}
         try{document.getElementById("now-desc").textContent=v.desc+" ｜ 学习目标："+v.goal;}catch(e){}
         if(window.EplanHistory)EplanHistory.recordVideo({title:"P"+v.p+" "+v.title,source:"工控圈",url:"videos/index.html#video-main"});
